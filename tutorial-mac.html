@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac 苹果电脑配置教程：2026 Clash Verge Rev / Sing-Box / Quantumult X macOS 全指南 | 闪电机场评测</title>
+    <meta name="description" content="2026最全 macOS 苹果电脑科学上网配置教程。涵盖 Apple Silicon M1/M2/M3/M4 芯片适配、Clash Verge Rev Mac 版安装、Enhanced Mode 增强模式与安全授权设置。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .review-article { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+        .review-article h1 { font-size: 1.85rem; line-height: 1.35; margin-bottom: 16px; color: var(--text-primary); }
+        .article-meta-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 0.85rem; color: var(--text-muted); padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+        .tag-badge { padding: 4px 10px; border-radius: 4px; font-weight: 600; font-size: 0.775rem; }
+        .tag-badge.blue { background: #eff6ff; color: var(--primary); border: 1px solid #bfdbfe; }
+        .callout-box { background: #f8fafc; border-left: 4px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 24px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
+        .article-body h2 { font-size: 1.45rem; margin-top: 36px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+        .article-body h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 12px; color: var(--text-primary); }
+        .article-body p, .article-body li { line-height: 1.8; color: var(--text-secondary); font-size: 0.975rem; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+        .article-body li { margin-bottom: 8px; }
+        .faq-section { margin-top: 40px; background: #fafafa; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; }
+        .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-question { font-weight: 700; color: var(--text-primary); margin-bottom: 8px; font-size: 1.05rem; }
+        .faq-answer { color: var(--text-secondary); line-height: 1.65; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">首页</a>
+                <a href="rankings.html" class="nav-item">机场排行榜</a>
+                <a href="reviews.html" class="nav-item">深度测评</a>
+                <a href="tutorials.html" class="nav-item active">新手教程</a>
+                <a href="speedtest.html" class="nav-item">实时测速</a>
+                <a href="coupons.html" class="nav-item">优惠福利</a>
+                <a href="about.html" class="nav-item">关于我们</a>
+            </nav>
+            <div class="nav-actions"><a href="rankings.html" class="btn btn-primary">Top 10 推荐</a></div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="grid grid-3-1">
+            <div class="main-content">
+                <article class="review-article" id="mac-tutorial">
+                    <h1>Mac 苹果电脑配置教程：2026 Clash Verge Rev / Sing-Box / Surge macOS 全指南</h1>
+                    <div class="article-meta-bar">
+                        <span class="tag-badge blue">macOS 专版</span>
+                        <span>更新于 2026-10-04</span>
+                        <span>阅读时间：约 12 分钟</span>
+                        <span>作者：闪电评测团队</span>
+                    </div>
+
+                    <div class="callout-box">
+                        <strong>导读：</strong>在 macOS 操作系统上，由于 Apple Silicon 芯片架构的升级与 macOS 严格的权限与 Gatekeeper 安全管控，配置代理客户端时有其独特的步骤。本文针对 <strong>Apple Silicon (M1/M2/M3/M4) 及 Intel 架构</strong> 的 Mac 用户，深度讲解 Clash Verge Rev 和 Sing-Box 的配置方法。
+                    </div>
+
+                    <div class="article-body">
+                        <h2>一、macOS 客户端版本选型与芯片区分</h2>
+                        <p>苹果 Mac 电脑在下载软件时必须确认当前设备的 CPU 芯片架构：</p>
+                        <ul>
+                            <li><strong>Apple Silicon 芯片 (M1 / M2 / M3 / M4 系列)：</strong> 务必下载带有 <code>aarch64.dmg</code> 或 <code>arm64.dmg</code> 标识的安装包，可享受原生 ARM 架构的极高能效与极低 CPU 占用。</li>
+                            <li><strong>Intel 架构芯片 (旧款 Mac 电脑)：</strong> 需下载带有 <code>x64.dmg</code> 或 <code>x86_64.dmg</code> 标识的安装文件。</li>
+                        </ul>
+
+                        <h2>二、Clash Verge Rev Mac 版配置全流程</h2>
+                        <ol>
+                            <li>从 Github 下载对应的 `.dmg` 镜像文件：<a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener noreferrer">clash-verge-rev macOS Releases</a>。</li>
+                            <li>双击 `.dmg` 文件，将 Clash Verge 图标拖入右侧的 <strong>Applications (应用程序)</strong> 文件夹中。</li>
+                            <li>在 Finder 的应用程序列表中双击打开软件。若提示 <code>“Clash Verge”来自未身份标识的开发者</code>，点击取消。打开 Mac 的 <code>系统设置 -> 隐私与安全性</code>，在右侧滑动到最底部，点击 <strong>“仍要打开”</strong> 按钮，输入开机密码允许运行。</li>
+                            <li>前往机场后台（如 <a href="article-sujie.html">速界专线机场</a> 或 <a href="article-jilianyun.html">极连云</a>）复制 Clash 订阅链接。</li>
+                            <li>在 Clash Verge 中点击 <strong>“Profiles (订阅)”</strong>，粘贴链接后点击 <strong>“Import (导入)”</strong>。选中刚导入的配置文件。</li>
+                            <li>点击 <strong>“Proxies (代理)”</strong>，选择规则分流模式并勾选低延迟节点。</li>
+                            <li>进入 <strong>“Settings (设置)”</strong>，开启 <strong>“System Proxy (系统代理)”</strong> 即可畅享网络。</li>
+                        </ol>
+
+                        <h2>三、解决 macOS 终端 (Terminal / Homebrew) 代理方法</h2>
+                        <p>在 macOS 系统中，开启系统的 HTTP 代理后，系统默认的 Terminal 终端、Git 命令以及 Homebrew 并不会自动走代理。若要使终端走加速，请在终端窗口中运行以下命令：</p>
+                        <div class="code-block">
+                            # 设置终端临时代理 (基于 Clash Verge 默认端口 7897)<br>
+                            export http_proxy="http://127.0.0.1:7897"<br>
+                            export https_proxy="http://127.0.0.1:7897"<br>
+                            <br>
+                            # 验证代理是否成功生效<br>
+                            curl -i https://www.google.com
+                        </div>
+                        <p>更彻底的解决方案是在 Clash Verge Rev 中开启 <strong>TUN Mode (TUN 模式)</strong>，开启后所有终端命令、Docker 容器与虚拟机网络均会自动被虚拟网卡全盘接管。增加权限时需输入 Mac 锁屏密码授权辅助工具安装。</p>
+
+                        <div class="faq-section" id="faq">
+                            <h2>❓ Mac 苹果电脑客户常见问题 FAQ (8条)</h2>
+                            <div class="faq-item">
+                                <div class="faq-question">Q1: macOS 安装提示“文件已损坏，打不开。你应该将它移到废纸篓”怎么处理？</div>
+                                <div class="faq-answer">答：这是由于 macOS 隔离属性 (quarantine) 触发的安全机制。解决办法：打开 Mac 的“终端 (Terminal)”，输入命令 `sudo xattr -rd com.apple.quarantine /Applications/Clash\ Verge.app`（若为其他软件替换最后路径），按回车后输入 Mac 锁屏密码即可修复打开。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q2: 为什么开启 Clash 后，Safari 浏览器可以上网，但 Chrome 或 Edge 提示“无法连接代理”？</div>
+                                <div class="faq-answer">答：请检查 Chrome 浏览器中是否安装了诸如 `SwitchyOmega` 等第三方代理扩展插件。如果有安装，请将扩展插件模式修改为“使用系统代理”，避免插件覆盖了 macOS 系统全局代理设置。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q3: M1/M2/M3 芯片的 Mac 错误下载了 x64 版本的客户端会有什么后果？</div>
+                                <div class="faq-answer">答：错误下载 x64 版本后，macOS 会通过 Rosetta 2 转译运行，这会导致系统耗电量增加 2-3 倍，且运行过程更容易出现顿卡或内存泄漏。强烈建议认准 `aarch64 / arm64` 原生架构包。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q4: Mac 休眠唤醒后，代理失效打不开网页怎么办？</div>
+                                <div class="faq-answer">答：这是由于 macOS 在休眠节能状态下断开并重新加载了虚拟网卡设备。解决办法：在 Clash Verge 界面中将“System Proxy”开关先关闭再重新开启一次；或在设置中勾选 `Auto Reconnect` 功能。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q5: 如何完全干净地卸载 Mac 上的代理软件与残留描述文件？</div>
+                                <div class="faq-answer">答：首先在软件设置中将“System Proxy”和“TUN Mode”完全关闭；随后退出软件，进入 `/Applications` 文件夹将应用移入废纸篓；最后检查 `~/Library/Application Support/` 下对应的软件文件夹并进行删除。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q6: macOS 上的 Surge 4/5 客户端与 Clash Verge 哪个更适合我？</div>
+                                <div class="faq-answer">答：Surge 是 macOS 平台上的顶级网络调试与代理神器，拥有极致优雅的界面与强悍的抓包功能，但价格较为昂贵（单设备授权 $49.99 起）；Clash Verge Rev 完全免费开源且功能足够强大，适合绝大部分普通用户。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q7: 为什么开启代理后 Mac 无法在局域网中使用 AirDrop (隔空投送) 或打印机？</div>
+                                <div class="faq-answer">答：因为代理软件抓取了局域网广播包。解决办法：在代理规则组中确认 `LAN / Local Direct` 局域网直连规则已开启，并在设置中将局域网段（如 192.168.0.0/16 和 10.0.0.0/8）加入 Bypass 绕过列表。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q8: 如何在 Mac 的顶部状态栏 (Menu Bar) 实时查看上传下载网速？</div>
+                                <div class="faq-answer">答：在 Clash Verge Rev 的 `Settings -> System Overlay / Tray` 中，开启 `Show Speed in Tray` (托盘显示网速) 功能，即可在 Mac 菜单栏右上角实时监视当前专线节点的带宽速率。</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>⚡ 推荐高速专线机场</h3>
+                    <div class="mini-card-list">
+                        <div class="mini-card">
+                            <span class="rank-num top-1">1</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-sujie.html">速界 (SpeedWorld)</a></h4>
+                                <p>IEPL专线 · ￥6/月起</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-2">2</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-jilianyun.html">极连云 (JiLianYun)</a></h4>
+                                <p>原生IP解锁 · 8K极速</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-3">3</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-bianyuanjiedian.html">边缘节点 (EdgeNode)</a></h4>
+                                <p>自研客户端 · 不限设备</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>📚 客户端生态总览</h3>
+                    <ul class="widget-links">
+                        <li><a href="tutorial-clash-verge.html">Clash Verge Rev 教程</a></li>
+                        <li><a href="tutorial-shadowrocket.html">Shadowrocket (小火箭) 教程</a></li>
+                        <li><a href="tutorial-v2rayn.html">v2rayN Windows 配置</a></li>
+                        <li><a href="tutorial-android.html">安卓手机客户端选型</a></li>
+                        <li><a href="tutorial-mac.html" class="active">Mac 苹果电脑配置</a></li>
+                        <li><a href="tutorial-sing-box.html">sing-box 极速上手</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+                <p>© 2026 闪电机场评测. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>导航快捷链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="rankings.html">机场排行榜</a></li>
+                    <li><a href="tutorials.html">客户端教程指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色专题</h4>
+                <ul>
+                    <li><a href="reviews.html">深度测评报告</a></li>
+                    <li><a href="speedtest.html">实时专线测速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="about.html">测评标准与声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

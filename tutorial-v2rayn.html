@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v2rayN Windows 配置教程：2026最全内核更新、订阅导入与路由分流指南 | 闪电机场评测</title>
+    <meta name="description" content="2026最权威 v2rayN Windows 配置教程。详细讲解 v2rayN 客户端下载、.NET Runtime 依赖安装、V2Ray/Xray/sing-box 内核切换、订阅导入与路由分流设置。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .review-article { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+        .review-article h1 { font-size: 1.85rem; line-height: 1.35; margin-bottom: 16px; color: var(--text-primary); }
+        .article-meta-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 0.85rem; color: var(--text-muted); padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+        .tag-badge { padding: 4px 10px; border-radius: 4px; font-weight: 600; font-size: 0.775rem; }
+        .tag-badge.cyan { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+        .callout-box { background: #f8fafc; border-left: 4px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 24px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
+        .article-body h2 { font-size: 1.45rem; margin-top: 36px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+        .article-body h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 12px; color: var(--text-primary); }
+        .article-body p, .article-body li { line-height: 1.8; color: var(--text-secondary); font-size: 0.975rem; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+        .article-body li { margin-bottom: 8px; }
+        .faq-section { margin-top: 40px; background: #fafafa; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; }
+        .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-question { font-weight: 700; color: var(--text-primary); margin-bottom: 8px; font-size: 1.05rem; }
+        .faq-answer { color: var(--text-secondary); line-height: 1.65; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">首页</a>
+                <a href="rankings.html" class="nav-item">机场排行榜</a>
+                <a href="reviews.html" class="nav-item">深度测评</a>
+                <a href="tutorials.html" class="nav-item active">新手教程</a>
+                <a href="speedtest.html" class="nav-item">实时测速</a>
+                <a href="coupons.html" class="nav-item">优惠福利</a>
+                <a href="about.html" class="nav-item">关于我们</a>
+            </nav>
+            <div class="nav-actions"><a href="rankings.html" class="btn btn-primary">Top 10 推荐</a></div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="grid grid-3-1">
+            <div class="main-content">
+                <article class="review-article" id="v2rayn-tutorial">
+                    <h1>v2rayN Windows 配置教程：2026最全内核更新、订阅导入与路由分流指南</h1>
+                    <div class="article-meta-bar">
+                        <span class="tag-badge cyan">Windows 专版</span>
+                        <span>更新于 2026-10-04</span>
+                        <span>阅读时间：约 11 分钟</span>
+                        <span>作者：闪电评测团队</span>
+                    </div>
+
+                    <div class="callout-box">
+                        <strong>导读：</strong><strong>v2rayN</strong> 是 Windows 平台上资历最深、最为成熟的代理客户端之一。它不仅原生支持 V2Ray、Xray (VLESS)、trojan、Shadowsocks 等传统协议，更在最新 6.x/7.x 版本中引入了 sing-box 内核支持。本文将一步步带您完成运行环境配置、订阅更新及路由分流。
+                    </div>
+
+                    <div class="article-body">
+                        <h2>一、运行环境准备：安装 .NET Desktop Runtime</h2>
+                        <p>由于 v2rayN 是基于 C# / WPF 框架开发的 Windows 原生应用，运行时需要微软官方的 <code>.NET Desktop Runtime</code> 组件支持：</p>
+                        <ul>
+                            <li>若未安装依赖直接双击运行 <code>v2rayN.exe</code>，系统会弹出类似 <code>To run this application, you must install .NET 8.0/6.0...</code> 的报错。</li>
+                            <li><strong>下载依赖组件：</strong> 前往微软官方网站下载安装 <a href="https://dotnet.microsoft.com/en-us/download/dotnet" target="_blank" rel="noopener noreferrer">.NET Desktop Runtime (x64)</a> 对应的最新版本安装包即可。</li>
+                        </ul>
+
+                        <h2>二、v2rayN 软件下载与解压说明</h2>
+                        <p>请认准官方 GitHub 开源发布仓库：</p>
+                        <ul>
+                            <li><strong>GitHub 官方下载：</strong> <a href="https://github.com/2dust/v2rayN/releases" target="_blank" rel="noopener noreferrer">2dust/v2rayN/releases (点击跳转官方)</a></li>
+                            <li>推荐下载包含了多内核的完整压缩包：<code>v2rayN-With-Core.zip</code> 或 <code>zz_v2rayN-With-Core-SelfContained.7z</code>。</li>
+                            <li><strong>极其重要：</strong> 请将下载后的压缩包解压到一个<strong>非中文路径</strong>的文件夹中（例如 `D:\Tools\v2rayN\`），切勿直接在 WinRAR 压缩包内部双击打开使用！</li>
+                        </ul>
+
+                        <h2>三、导入机场订阅与节点配置</h2>
+                        <p>配合高性能专线机场可最大化发挥 v2rayN 的网络吞吐性能。推荐在 <a href="rankings.html">2026 机场排行榜</a> 中选购 <a href="article-sujie.html">速界专线机场</a> 或 <a href="article-kexinyun.html">可信云 IEPL 专线</a>。</p>
+                        <ol>
+                            <li>在机场管理后台，复制您的 <strong>V2Ray 格式订阅链接 (v2ray / VLESS / Trojan)</strong>。</li>
+                            <li>双击运行 <code>v2rayN.exe</code>，在主界面顶部工具栏点击 <strong>“订阅分组” -> “订阅分组设置”</strong>。</li>
+                            <li>在弹出的窗口中点击左上角 <strong>“添加 (Add)”</strong>。</li>
+                            <li>在 <strong>“别名 (Remark)”</strong> 中填入机场名称，在 <strong>“可选地址 (Url)”</strong> 中粘贴刚才复制的机场订阅链接，点击“确定”。</li>
+                            <li>回到主界面，点击顶部菜单 <strong>“订阅分组” -> “更新订阅 (不通过代理)”</strong>。软件将自动从服务器下载全部节点。</li>
+                            <li>在主界面的节点列表中，选中想要使用的专线节点，按键盘 <strong>Enter 回车键</strong> 设为活动节点（设为活动节点后该行字体会加粗高亮）。</li>
+                        </ol>
+
+                        <h2>四、开启系统代理与选择路由规则</h2>
+                        <p>在 v2rayN 主界面的最下方状态栏，可以看到系统代理控制开关：</p>
+                        <ul>
+                            <li><strong>系统代理设置：</strong> 点击底部状态栏的“系统代理”下拉框，选择 <strong>“自动配置系统代理 (System Proxy)”</strong>。此时右下角托盘图标将变为红色，表示代理已成功生效。</li>
+                            <li><strong>路由模式选择：</strong> 底部“路由”下拉菜单建议选择 <strong>“绕过大陆 (Bypass CN)”</strong> 或 <strong>“黑名单 (blacklist)”</strong> 模式。此时国内流量直连，国外流量走专线节点。</li>
+                        </ul>
+
+                        <div class="faq-section" id="faq">
+                            <h2>❓ v2rayN Windows 客户常见问题 FAQ (8条)</h2>
+                            <div class="faq-item">
+                                <div class="faq-question">Q1: 为什么双击运行 v2rayN.exe 会弹出提示错误窗口或毫无反应？</div>
+                                <div class="faq-answer">答：90% 的原因是因为电脑未安装微软 `.NET Desktop Runtime` 运行库组件。请前往微软官网下载并安装 64 位 `.NET 8.0 Desktop Runtime` 或 `.NET 6.0` 之后重启软件即可解决。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q2: 为什么更新订阅时提示“基础连接已经关闭”或“远程服务器返回错误”？</div>
+                                <div class="faq-answer">答：该问题通常由本地公网 DNS 阻断机场域名引起。解决办法：1) 点击顶部“订阅分组”->“更新订阅 (通过代理)”，前提是当前已有可用节点；2) 检查订阅 URL 是否完整粘贴，是否有首尾空格；3) 登录机场后台更换新的备用订阅域名。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q3: v2rayN 怎么测试节点真实延迟和真实下载速度？</div>
+                                <div class="faq-answer">答：在主界面节点列表中，使用快捷键 `Ctrl + A` 全选所有节点，右键点击选择 `测试服务器延迟 (Ping)`，或者选择 `测试服务器真连接延迟 (HTTP)`；需要测试带宽吞吐时，可选择 `测试服务器下载速度`。建议挑选真连接延迟低于 50ms 的 IEPL 专线节点。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q4: v2rayN 的系统代理开启后，浏览器仍提示“代理服务器拒绝连接”怎么办？</div>
+                                <div class="faq-answer">答：请检查 Windows `设置 -> 网络和 Internet -> 代理`，查看“手动设置代理”的端口是否与 v2rayN 底部显示的本地 Socks/HTTP 端口（默认 10808/10809）完全一致。若其他软件占用端口，可在 v2rayN 设置中修改本地端口。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q5: 如何更新 v2rayN 的底层核心内核 (Xray / sing-box / V2Ray)？</div>
+                                <div class="faq-answer">答：点击顶部菜单 `检查更新` -> `检查 Core 更新`，在列表中勾选 `Xray` 或 `sing-box` 点击一键下载更新。保持核心内核最新可完美兼容最新的加密防封传输协议。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q6: 开启 v2rayN 后，微软商店 (UWP) 提示无网络或报错代码 0x800704cf 怎么解决？</div>
+                                <div class="faq-answer">答：因为 Windows UWP 应用默认受沙盒网络隔离限制。解决办法：在 v2rayN 顶部点击 `设置` -> `启用 Windows 应用 loopback`，在弹出的 Win32 工具中勾选 `Microsoft Store` 及其相关组件并保存即可。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q7: 为什么将 v2rayN 解压在中文目录下会导致某些节点无法开启？</div>
+                                <div class="faq-answer">答：底层代理核心（如 Xray/V2Ray 内核）为 Go 语言编写，对包含中文、特殊字符或空格的路径兼容性较差，可能引发 Core 崩溃退出。因此请务必将其放置于纯英文目录（如 `C:\v2rayN\`）。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q8: 如何设置 v2rayN 开机自动启动并自动开启代理？</div>
+                                <div class="faq-answer">答：进入 v2rayN `设置` -> `参数设置` -> `v2rayN设置`，勾选 `开机自动启动` 以及 `开机自动开启系统代理` 即可实现全自动无感上网。</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>⚡ 推荐高速专线机场</h3>
+                    <div class="mini-card-list">
+                        <div class="mini-card">
+                            <span class="rank-num top-1">1</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-sujie.html">速界 (SpeedWorld)</a></h4>
+                                <p>IEPL专线 · ￥6/月起</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-2">2</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-jilianyun.html">极连云 (JiLianYun)</a></h4>
+                                <p>原生IP解锁 · 8K极速</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-3">3</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-bianyuanjiedian.html">边缘节点 (EdgeNode)</a></h4>
+                                <p>自研客户端 · 不限设备</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>📚 客户端生态总览</h3>
+                    <ul class="widget-links">
+                        <li><a href="tutorial-clash-verge.html">Clash Verge Rev 教程</a></li>
+                        <li><a href="tutorial-shadowrocket.html">Shadowrocket (小火箭) 教程</a></li>
+                        <li><a href="tutorial-v2rayn.html" class="active">v2rayN Windows 配置</a></li>
+                        <li><a href="tutorial-android.html">安卓手机客户端选型</a></li>
+                        <li><a href="tutorial-mac.html">Mac 苹果电脑配置</a></li>
+                        <li><a href="tutorial-sing-box.html">sing-box 极速上手</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+                <p>© 2026 闪电机场评测. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>导航快捷链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="rankings.html">机场排行榜</a></li>
+                    <li><a href="tutorials.html">客户端教程指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色专题</h4>
+                <ul>
+                    <li><a href="reviews.html">深度测评报告</a></li>
+                    <li><a href="speedtest.html">实时专线测速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="about.html">测评标准与声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

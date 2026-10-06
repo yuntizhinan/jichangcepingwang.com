@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadowrocket (小火箭) 教程：2026 iOS苹果最全上手指南与美区ID获取 | 闪电机场评测</title>
+    <meta name="description" content="2026最全 Shadowrocket 小火箭使用教程。详细介绍外区 Apple ID 获取下载、节点订阅导入、规则分流、节点测速及常见连通性故障排除。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .review-article { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+        .review-article h1 { font-size: 1.85rem; line-height: 1.35; margin-bottom: 16px; color: var(--text-primary); }
+        .article-meta-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 0.85rem; color: var(--text-muted); padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+        .tag-badge { padding: 4px 10px; border-radius: 4px; font-weight: 600; font-size: 0.775rem; }
+        .tag-badge.purple { background: #f3e8ff; color: #7e22ce; border: 1px solid #d8b4fe; }
+        .callout-box { background: #f8fafc; border-left: 4px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 24px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
+        .article-body h2 { font-size: 1.45rem; margin-top: 36px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+        .article-body h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 12px; color: var(--text-primary); }
+        .article-body p, .article-body li { line-height: 1.8; color: var(--text-secondary); font-size: 0.975rem; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+        .article-body li { margin-bottom: 8px; }
+        .faq-section { margin-top: 40px; background: #fafafa; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; }
+        .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-question { font-weight: 700; color: var(--text-primary); margin-bottom: 8px; font-size: 1.05rem; }
+        .faq-answer { color: var(--text-secondary); line-height: 1.65; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">首页</a>
+                <a href="rankings.html" class="nav-item">机场排行榜</a>
+                <a href="reviews.html" class="nav-item">深度测评</a>
+                <a href="tutorials.html" class="nav-item active">新手教程</a>
+                <a href="speedtest.html" class="nav-item">实时测速</a>
+                <a href="coupons.html" class="nav-item">优惠福利</a>
+                <a href="about.html" class="nav-item">关于我们</a>
+            </nav>
+            <div class="nav-actions"><a href="rankings.html" class="btn btn-primary">Top 10 推荐</a></div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="grid grid-3-1">
+            <div class="main-content">
+                <article class="review-article" id="shadowrocket-tutorial">
+                    <h1>Shadowrocket (小火箭) 零基础上手与配置教程 (iOS 苹果全指南)</h1>
+                    <div class="article-meta-bar">
+                        <span class="tag-badge purple">iOS / iPadOS</span>
+                        <span>更新于 2026-10-04</span>
+                        <span>阅读时间：约 10 分钟</span>
+                        <span>作者：闪电评测团队</span>
+                    </div>
+
+                    <div class="callout-box">
+                        <strong>导读：</strong><strong>Shadowrocket（俗称小火箭）</strong> 是苹果 iOS/iPadOS 平台上口碑最佳、操作最简便的高性能代理软件。由于中国大陆 App Store 政策下架，用户需要通过非中国大陆区 Apple ID 购买下载。本文将为您清晰拆解下载、配置与高阶使用的全流程。
+                    </div>
+
+                    <div class="article-body">
+                        <h2>一、获取与登录外区 Apple ID 安全规则</h2>
+                        <p>由于小火箭仅在海外区 App Store 上架（买断售价 $2.99），获取软件前请严格遵循以下安全防封规则：</p>
+                        <ul style="color: #dc2626;">
+                            <li><strong>⚠️ 极其重要安全警告：</strong> 严禁在 iPhone / iPad 的 <code>系统设置 -> iCloud</code> 界面登录非本人账号！一旦账号被锁，将导致手机无法解锁砖化！</li>
+                            <li><strong>正确操作位置：</strong> 仅在桌面打开 <code>App Store (应用商店)</code> 软件内部进行账号切换。</li>
+                        </ul>
+
+                        <h2>二、Shadowrocket 下载全步骤拆解</h2>
+                        <ol>
+                            <li>在 iPhone 桌面点击打开 <strong>App Store</strong>，点击右上角的个人头像进入账户页面。</li>
+                            <li>滑动到最底部，点击 <strong>“退出登录 (Sign Out)”</strong>。</li>
+                            <li>在顶部输入您准备好的美区或港区 Apple ID 账号与密码登录（若提示双重验证，按提示接收验证码输入）。</li>
+                            <li>登录成功后，App Store 页面会自动刷新语言。在搜索框输入 <code>Shadowrocket</code>。</li>
+                            <li>认准正版小火箭图标（阴影小火箭图标，开发者为 Lining Guo），点击下载安装（售价 $2.99，可用外区礼品卡兑换或购买已购共享号）。</li>
+                            <li>下载完成后，重新点击 App Store 头像滑动到底部退出共享账号，登录回您自己的个人 Apple ID。软件已永久安装在设备中。</li>
+                        </ol>
+
+                        <h2>三、节点订阅导入与一键连接</h2>
+                        <p>配合优质专线机场，小火箭可实现秒开 4K 视频。您可以参考 <a href="rankings.html">2026 年机场排行榜</a> 选择 <a href="article-jilianyun.html">极连云</a> 或 <a href="article-sujie.html">速界机场</a>。</p>
+                        <ol>
+                            <li>登录机场后台，找到“一键导入”或“复制 Shadowrocket 订阅链接”。</li>
+                            <li>打开 Shadowrocket 软件，点击右上角 <strong>“+”</strong> 号。</li>
+                            <li>在 <strong>“类型 (Type)”</strong> 下拉菜单中选择 <strong>“Subscribe (订阅)”</strong>。</li>
+                            <li>在 <strong>“URL”</strong> 输入框中粘贴复制的订阅链接，在“备注”中填入机场名字，点击右上角 <strong>“保存 (Save)”</strong>。</li>
+                            <li>小火箭将自动拉取节点列表。在首页列表中，点击选择一个延迟最低的专线节点（如香港 IEPL）。</li>
+                            <li>开启顶部的 <strong>“未连接”</strong> 主开关。首次开启时系统会弹出提示 <code>“Shadowrocket”想添加 VPN 配置</code>，点击“允许”并输入 iPhone 解锁密码授权。</li>
+                        </ol>
+
+                        <h2>四、智能规则分流模式详解</h2>
+                        <p>小火箭支持灵活的全局路由规则，在主界面“全局路由”处可自由选择：</p>
+                        <ul>
+                            <li><strong>配置 (Config) 模式【默认推荐】：</strong> 自动识别流量。访问百度、淘宝、微信等国内流量直接连接；访问 Google、YouTube、ChatGPT 自动走代理节点。省电且无缝。</li>
+                            <li><strong>代理 (Proxy) 模式：</strong> 强制手机全部流量走代理节点。适合特定受限网站测试。</li>
+                            <li><strong>直连 (Direct) 模式：</strong> 手机所有流量直接连接，相当于关闭代理。</li>
+                        </ul>
+
+                        <div class="faq-section" id="faq">
+                            <h2>❓ Shadowrocket 用户常见问题 FAQ (8条)</h2>
+                            <div class="faq-item">
+                                <div class="faq-question">Q1: App Store 搜索出来的“小火箭”图标很多，如何辨别正版？</div>
+                                <div class="faq-answer">答：请认准软件英文全名 `Shadowrocket`，应用图标为正方形阴影小火箭，开发者（Developer）名称必须为 `Lining Guo`。App Store 中有大量名称相似的山寨仿冒收费应用，请务必认准开发者信息再付费下载。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q2: 为什么开启小火箭开关时提示“添加 VPN 配置失败”？</div>
+                                <div class="faq-answer">答：通常是因为系统中有旧的 VPN 描述文件残留冲突。解决办法：进入 iPhone `设置 -> 通用 -> VPN 与设备管理`，清理掉其他无关的 VPN 配置文件，随后重启 iPhone 再次尝试连接授权。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q3: 共享外区 Apple ID 登录时提示“账号锁定”或“安全双重验证”怎么办？</div>
+                                <div class="faq-answer">答：共享账号使用人数过多极易触发苹果风控。强烈建议前往苹果官网（appleid.apple.com）使用自己的全新 Outlook/Gmail 邮箱，花 5 分钟自由注册一个专属的美区 Apple ID，安全且永不封号。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q4: 为什么小火箭连接后可以正常上网，但点击节点测速全部提示 Ping 失败？</div>
+                                <div class="faq-answer">答：这是因为小火箭默认的测试 URL 在国内受阻。解决办法：进入小火箭底部 `设置 -> 测试分组 -> 测试网址`，将 URL 改为 `https://www.google.com/generate_204` 或 `https://cp.cloudflare.com/generate_204` 即可恢复精准测速。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q5: 如何配置小火箭在后台自动刷新节点订阅？</div>
+                                <div class="faq-answer">答：在小火箭底部进入 `设置 -> 订阅`，开启 `打开时更新` 和 `自动更新` 开关。这样每次打开小火箭时都会自动同步机场最新的节点列表与流量信息。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q6: 小火箭配合机场节点支持畅刷海外版 TikTok 和对话 ChatGPT 吗？</div>
+                                <div class="faq-answer">答：完全支持。运行小火箭时，选择拥有原生双 ISP 住宅 IP 的机场节点（如 <a href="article-jilianyun.html">极连云</a> 或 <a href="article-sujie.html">速界机场</a>），并在小火箭设置中开启 UDP 转发即可稳定流畅使用 TikTok 和 OpenAI 服务。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q7: 开启小火箭后连接 Wi-Fi 正常，但切换到 4G/5G 手机蜂窝网络就断网？</div>
+                                <div class="faq-answer">答：请检查 iPhone `设置 -> 蜂窝网络`，下拉找到 `Shadowrocket`，确保其网络访问权限已勾选为 `WLAN 与蜂窝网`，避免系统阻断了小火箭在蜂窝网络下的联网权限。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q8: 小火箭的“代理共享”功能怎么用？可以给同 Wi-Fi 下的 iPad 或 Mac 加速吗？</div>
+                                <div class="faq-answer">答：可以。在小火箭 `设置 -> 代理 -> 允许代理` 开启开关，界面会显示 iPhone 的局域网 IP 地址和端口（默认 1082）。在同一 Wi-Fi 下的 iPad 或电脑中，将网络代理设置为手动，填入该 IP 与端口，即可无需安装客户端共享科学上网。</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>⚡ 推荐高速专线机场</h3>
+                    <div class="mini-card-list">
+                        <div class="mini-card">
+                            <span class="rank-num top-1">1</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-sujie.html">速界 (SpeedWorld)</a></h4>
+                                <p>IEPL专线 · ￥6/月起</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-2">2</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-jilianyun.html">极连云 (JiLianYun)</a></h4>
+                                <p>原生IP解锁 · 8K极速</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-3">3</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-bianyuanjiedian.html">边缘节点 (EdgeNode)</a></h4>
+                                <p>自研客户端 · 不限设备</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>📚 客户端生态总览</h3>
+                    <ul class="widget-links">
+                        <li><a href="tutorial-clash-verge.html">Clash Verge Rev 教程</a></li>
+                        <li><a href="tutorial-shadowrocket.html" class="active">Shadowrocket (小火箭) 教程</a></li>
+                        <li><a href="tutorial-v2rayn.html">v2rayN Windows 配置</a></li>
+                        <li><a href="tutorial-android.html">安卓手机客户端选型</a></li>
+                        <li><a href="tutorial-mac.html">Mac 苹果电脑配置</a></li>
+                        <li><a href="tutorial-sing-box.html">sing-box 极速上手</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+                <p>© 2026 闪电机场评测. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>导航快捷链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="rankings.html">机场排行榜</a></li>
+                    <li><a href="tutorials.html">客户端教程指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色专题</h4>
+                <ul>
+                    <li><a href="reviews.html">深度测评报告</a></li>
+                    <li><a href="speedtest.html">实时专线测速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="about.html">测评标准与声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

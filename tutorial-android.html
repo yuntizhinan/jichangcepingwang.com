@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安卓手机客户端选型指南：2026 Clash Meta / v2rayNG / Sing-Box 横向对比 | 闪电机场评测</title>
+    <meta name="description" content="2026最全 Android 安卓手机科学上网客户端选型与配置指南。深入对比 Clash Meta for Android、v2rayNG、Surfboard 与 Sing-Box For Android 的性能、耗电量与分流特性。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .review-article { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+        .review-article h1 { font-size: 1.85rem; line-height: 1.35; margin-bottom: 16px; color: var(--text-primary); }
+        .article-meta-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 0.85rem; color: var(--text-muted); padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+        .tag-badge { padding: 4px 10px; border-radius: 4px; font-weight: 600; font-size: 0.775rem; }
+        .tag-badge.green { background: #ecfdf5; color: var(--accent-green-dark); border: 1px solid #a7f3d0; }
+        .callout-box { background: #f8fafc; border-left: 4px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 24px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
+        .article-body h2 { font-size: 1.45rem; margin-top: 36px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+        .article-body h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 12px; color: var(--text-primary); }
+        .article-body p, .article-body li { line-height: 1.8; color: var(--text-secondary); font-size: 0.975rem; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+        .article-body li { margin-bottom: 8px; }
+        .faq-section { margin-top: 40px; background: #fafafa; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; }
+        .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-question { font-weight: 700; color: var(--text-primary); margin-bottom: 8px; font-size: 1.05rem; }
+        .faq-answer { color: var(--text-secondary); line-height: 1.65; font-size: 0.95rem; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.925rem; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: left; }
+        .comparison-table th { background: #f1f5f9; font-weight: 600; color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">首页</a>
+                <a href="rankings.html" class="nav-item">机场排行榜</a>
+                <a href="reviews.html" class="nav-item">深度测评</a>
+                <a href="tutorials.html" class="nav-item active">新手教程</a>
+                <a href="speedtest.html" class="nav-item">实时测速</a>
+                <a href="coupons.html" class="nav-item">优惠福利</a>
+                <a href="about.html" class="nav-item">关于我们</a>
+            </nav>
+            <div class="nav-actions"><a href="rankings.html" class="btn btn-primary">Top 10 推荐</a></div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="grid grid-3-1">
+            <div class="main-content">
+                <article class="review-article" id="android-tutorial">
+                    <h1>安卓手机客户端选型指南：2026 Clash Meta / v2rayNG / Sing-Box 横向对比</h1>
+                    <div class="article-meta-bar">
+                        <span class="tag-badge green">Android 系统选型</span>
+                        <span>更新于 2026-10-04</span>
+                        <span>阅读时间：约 11 分钟</span>
+                        <span>作者：闪电评测团队</span>
+                    </div>
+
+                    <div class="callout-box">
+                        <strong>导读：</strong>Android 生态的开放性赋予了用户丰富的科学上网客户端选择。但在众多应用中，选择一款稳定性高、耗电低且支持防封协议的客户端至关重要。本文将对 <strong>Clash Meta for Android (CMA)</strong>、<strong>v2rayNG</strong>、<strong>Sing-Box</strong> 和 <strong>Surfboard</strong> 进行四大维度的科学测评与选型推荐。
+                    </div>
+
+                    <div class="article-body">
+                        <h2>一、安卓四大主流代理客户端横向对比表</h2>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>客户端名称</th>
+                                    <th>主要优势</th>
+                                    <th>协议兼容性</th>
+                                    <th>后台续航保活</th>
+                                    <th>适合人群</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Clash Meta (CMA)</strong></td>
+                                    <td>界面美观，规则分流极强，完美支持分组</td>
+                                    <td>全协议 (Hysteria2/TUIC/VLESS)</td>
+                                    <td>良好 (需配置电池优化)</td>
+                                    <td>小白首选、追求分流体验者</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>v2rayNG</strong></td>
+                                    <td>轻量稳定，占用极小，更新极其迅速</td>
+                                    <td>Xray 全协议/VLESS/Trojan</td>
+                                    <td>极佳 (极低后台功耗)</td>
+                                    <td>追求稳定省电、备用机用户</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sing-Box Android</strong></td>
+                                    <td>底层基于 Go 原生内核，吞吐网速极高</td>
+                                    <td>新一代全协议 (Reality/Hysteria2)</td>
+                                    <td>极佳</td>
+                                    <td>极客用户、追求极速测速者</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Surfboard (冲浪板)</strong></td>
+                                    <td>兼容 Surge 规则，交互原生符合 Android 规范</td>
+                                    <td>SS / Vmess / Trojan</td>
+                                    <td>优秀</td>
+                                    <td>喜欢原生 Material 风格者</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>二、Clash Meta for Android 极速上手配置</h2>
+                        <ol>
+                            <li>从官方 GitHub 下载开源 APK：<a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="noopener noreferrer">ClashMetaForAndroid/releases (点击直达)</a>。</li>
+                            <li>安装后打开应用，点击 <strong>“配置 (Profiles)” -> “新配置 (New Profile)” -> “URL”</strong>。</li>
+                            <li>在“URL”一栏粘贴在机场后台复制的 Clash 订阅链接（推荐使用 <a href="article-sujie.html">速界专线机场</a> 或 <a href="article-jilianyun.html">极连云</a> 订阅），设置自动刷新时间为 1440 分钟，点击右上角保存。</li>
+                            <li>返回主界面，点击选中刚才导入的配置文件。</li>
+                            <li>点击主界面的 <strong>“已停止” 开关</strong>，启动 VPN 服务。首次启动需在系统弹窗中允许“建立 VPN 连接”申请。</li>
+                            <li>点击 <strong>“控制台 (Proxy)”</strong>，在分组中选择节点即可无缝使用。</li>
+                        </ol>
+
+                        <h2>三、v2rayNG 轻量稳定配置步骤</h2>
+                        <ol>
+                            <li>官方下载：<a href="https://github.com/2dust/v2rayNG/releases" target="_blank" rel="noopener noreferrer">2dust/v2rayNG/releases</a> 下载 `v2rayNG_x.x.x_arm64-v8a.apk`。</li>
+                            <li>复制机场的 v2ray/vless 订阅链接。</li>
+                            <li>打开 v2rayNG，点击左上角三条杠菜单 <strong>“订阅分组设置”</strong>，点击右上角 <strong>“+”</strong> 号。</li>
+                            <li>填入备注名称与订阅 URL，点击保存。</li>
+                            <li>回到主界面，点击右上角三点菜单选择 <strong>“更新订阅”</strong>。</li>
+                            <li>在列表中选择节点，点击右下角 V 字形圆圈图标开启加速。</li>
+                        </ol>
+
+                        <h2>四、安卓系统防杀后台与保活设置指南</h2>
+                        <p>国内国产 ROM（华为 HarmonyOS、小米 HyperOS、OPPO ColorOS、vivo OriginOS）通常具有严格的后台杀进程机制，会导致科学上网连接频繁断开。请按以下步骤优化：</p>
+                        <ul>
+                            <li><strong>关闭电池优化限制：</strong> 进入手机 `设置 -> 应用管理 -> 对应的客户端 (如 Clash Meta)`，将电池使用管理设置为 <code>无限制 / 允许后台高耗电</code>。</li>
+                            <li><strong>开启应用锁定：</strong> 在手机“多任务后台管理”页面中，下拉该应用卡片并点击“锁定 (Lock)”小锁图标，防止一键清理时被杀。</li>
+                            <li><strong>允许自启动：</strong> 在系统权限管理中，将客户端的“允许自启动”与“允许关联启动”开关打开。</li>
+                        </ul>
+
+                        <div class="faq-section" id="faq">
+                            <h2>❓ 安卓手机客户端选型客户常见问题 FAQ (8条)</h2>
+                            <div class="faq-item">
+                                <div class="faq-question">Q1: 安卓手机推荐用 Clash Meta 还是 v2rayNG？哪个更好？</div>
+                                <div class="faq-answer">答：看具体需求。若您重视“智能分流”（如按 APP 指定走代理或直连、自动选择节点），推荐首选 Clash Meta for Android；若您追求“极其省电、稳定不掉线、操作极其简单”，推荐选择 v2rayNG。两者均完全免费开源。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q2: 为什么开启客户端后手机通知栏一直显示“已连接到 VPN”且无法划掉？</div>
+                                <div class="faq-answer">答：这是 Android 系统的标准安全机制提示，用以告知用户当前有系统虚拟网卡在工作。只要 VPN 在工作该提示就会存在，并非软件异常。在手机通知设置中可将其设置为“静默通知”即可隐藏图标。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q3: 华为鸿蒙系统 (HarmonyOS / NEXT) 安装 APK 提示“高风险应用”或禁止安装怎么办？</div>
+                                <div class="faq-answer">答：华为系统对未在华为应用市场上架的 APK 审查严格。解决办法：在安装弹窗中关闭“纯净模式”；或者在安装界面点击“了解风险”后勾选“继续安装”；如果在鸿蒙 NEXT 系统，请确认下载的是适配 NEXT 版本的标准安装包。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q4: 为什么锁屏一段时间后，重新打开手机发现断网连不上？</div>
+                                <div class="faq-answer">答：这是由于国产手机系统在锁屏后自动清理了后台运行的代理进程。请务必参考本文第四节，前往系统设置中将客户端的电池优化修改为“无限制”，并在后台任务卡片中加上锁定小锁。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q5: 安卓客户端如何开启“分应用代理 (Split Tunneling)”？</div>
+                                <div class="faq-answer">答：以 Clash Meta 为例：进入软件 `设置 -> 应用分流 (Network Provider)`，开启分流开关。选择“仅代理选中应用”或“绕过选中应用”，勾选您需要走代理的软件（如 YouTube、Telegram），国内微信和支付宝不勾选即可。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q6: 客户端导入订阅提示“Unrecognized format / 解析失败”怎么解决？</div>
+                                <div class="faq-answer">答：请检查导入的订阅格式是否与客户端匹配。Clash 客户端仅支持包含 YAML 规则的 Clash 订阅；v2rayNG 仅支持 BASE64 编码的 v2ray 订阅。若链接不匹配，可在机场后台切换对应的客户端专用订阅按钮。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q7: 开启代理后手机发热严重、掉电非常快，这是正常的吗？</div>
+                                <div class="faq-answer">答：不正常。导致发热的主要原因是开启了频繁的全局节点自动测速或日志级别设为了 Debug。请在设置中将“日志级别”设为 `Silent` 或 `Error`，并将自动测速间隔拉长至 60 分钟以上，可大幅降低 CPU 功耗。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q8: 安卓手机开热点给笔记本电脑，笔记本能共享手机的科学上网网络吗？</div>
+                                <div class="faq-answer">答：普通开热点默认不共享代理。解决办法：1) 在 Clash Meta 中开启“允许局域网连接 (Allow LAN)”功能，笔记本连接热点后手动设置 HTTP 代理为手机 IP 端口；2) 手机安装 `VPN Hotspot` (需 Root) 实现全自动热点转发。</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>⚡ 推荐高速专线机场</h3>
+                    <div class="mini-card-list">
+                        <div class="mini-card">
+                            <span class="rank-num top-1">1</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-sujie.html">速界 (SpeedWorld)</a></h4>
+                                <p>IEPL专线 · ￥6/月起</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-2">2</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-jilianyun.html">极连云 (JiLianYun)</a></h4>
+                                <p>原生IP解锁 · 8K极速</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-3">3</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-bianyuanjiedian.html">边缘节点 (EdgeNode)</a></h4>
+                                <p>自研客户端 · 不限设备</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>📚 客户端生态总览</h3>
+                    <ul class="widget-links">
+                        <li><a href="tutorial-clash-verge.html">Clash Verge Rev 教程</a></li>
+                        <li><a href="tutorial-shadowrocket.html">Shadowrocket (小火箭) 教程</a></li>
+                        <li><a href="tutorial-v2rayn.html">v2rayN Windows 配置</a></li>
+                        <li><a href="tutorial-android.html" class="active">安卓手机客户端选型</a></li>
+                        <li><a href="tutorial-mac.html">Mac 苹果电脑配置</a></li>
+                        <li><a href="tutorial-sing-box.html">sing-box 极速上手</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+                <p>© 2026 闪电机场评测. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>导航快捷链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="rankings.html">机场排行榜</a></li>
+                    <li><a href="tutorials.html">客户端教程指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色专题</h4>
+                <ul>
+                    <li><a href="reviews.html">深度测评报告</a></li>
+                    <li><a href="speedtest.html">实时专线测速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="about.html">测评标准与声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

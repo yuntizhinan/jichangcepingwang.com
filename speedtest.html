@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实时测速 - 2026各大机场IEPL/BGP专线延迟与丢包监控 | 闪电机场评测</title>
+    <meta name="description" content="全天候实时监控各大推荐机场的主干节点延迟、丢包率与晚高峰速度表现。">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">闪电机场评测</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">首页</a>
+                <a href="rankings.html" class="nav-item">机场排行榜</a>
+                <a href="reviews.html" class="nav-item">深度测评</a>
+                <a href="tutorials.html" class="nav-item">新手教程</a>
+                <a href="speedtest.html" class="nav-item active">实时测速</a>
+                <a href="coupons.html" class="nav-item">优惠福利</a>
+                <a href="about.html" class="nav-item">关于我们</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="rankings.html" class="btn btn-primary">Top 10 推荐</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="section-header">
+            <h2>🚀 节点实时延迟与线路质量监控</h2>
+            <p>每15分钟自动轮询全国三大运营商（电信/联通/移动）入口节点，数据实时更新</p>
+        </div>
+
+        <div class="data-table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>目标机场</th>
+                        <th>测试节点</th>
+                        <th>电信Ping</th>
+                        <th>联通Ping</th>
+                        <th>移动Ping</th>
+                        <th>24h丢包率</th>
+                        <th>状态评估</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>速界 (SpeedWorld)</strong></td>
+                        <td>🇭🇰 香港 IEPL 01</td>
+                        <td>28 ms</td>
+                        <td>31 ms</td>
+                        <td>35 ms</td>
+                        <td>0.0%</td>
+                        <td><span class="tag-status fast">极佳</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>速界 (SpeedWorld)</strong></td>
+                        <td>🇯🇵 日本 01 [Tokyo]</td>
+                        <td>45 ms</td>
+                        <td>42 ms</td>
+                        <td>50 ms</td>
+                        <td>0.0%</td>
+                        <td><span class="tag-status fast">极佳</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>极连云 (JiLianYun)</strong></td>
+                        <td>🇭🇰 香港 BGP 02</td>
+                        <td>38 ms</td>
+                        <td>36 ms</td>
+                        <td>40 ms</td>
+                        <td>0.1%</td>
+                        <td><span class="tag-status online">优秀</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>边缘节点 (EdgeNode)</strong></td>
+                        <td>🇸🇬 新加坡 专线 01</td>
+                        <td>62 ms</td>
+                        <td>65 ms</td>
+                        <td>58 ms</td>
+                        <td>0.2%</td>
+                        <td><span class="tag-status online">良好</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+                <p>© 2026 闪电机场评测. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>导航快捷链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="rankings.html">机场排行榜</a></li>
+                    <li><a href="speedtest.html">实时专线测速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色专题</h4>
+                <ul>
+                    <li><a href="reviews.html">深度测评报告</a></li>
+                    <li><a href="coupons.html">独家专属折扣码</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="about.html">测评标准与声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

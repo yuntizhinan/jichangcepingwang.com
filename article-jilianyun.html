@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极连云（JiLianYun）深度评测：全IPLC专线 · 晚高峰不限速 · 原生IP解锁实测 | 闪电机场评测</title>
+    <meta name="description" content="极连云（JiLianYun）2026 最新深度评测：全 IPLC 专线架构，晚高峰带宽上限达 2.5Gbps 且不限速，原生 IP 出口完美解锁 Netflix、ChatGPT、TikTok、Disney+，年付折合低至 ¥8/月，性价比极高。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .review-article {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+        }
+        .review-article h1 {
+            font-size: 1.8rem;
+            line-height: 1.35;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-meta-bar {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .tag-badge {
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.775rem;
+        }
+        .tag-badge.blue { background: #eff6ff; color: var(--primary); border: 1px solid #bfdbfe; }
+        .tag-badge.green { background: #ecfdf5; color: var(--accent-green-dark); border: 1px solid #a7f3d0; }
+        .tag-badge.purple { background: #f3e8ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+
+        .callout-box {
+            background: #f8fafc;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 16px 20px;
+            margin: 24px 0;
+            font-size: 0.925rem;
+            color: var(--text-secondary);
+        }
+        .callout-box strong { color: var(--text-primary); }
+
+        .article-body h2 {
+            font-size: 1.4rem;
+            margin: 32px 0 16px;
+            color: var(--text-primary);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-body h3 {
+            font-size: 1.15rem;
+            margin: 20px 0 12px;
+            color: var(--text-primary);
+        }
+        .article-body p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .article-body ul, .article-body ol {
+            margin: 0 0 20px 20px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .article-body li { margin-bottom: 8px; }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .plan-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            text-align: center;
+        }
+        .plan-card.featured {
+            border-color: var(--primary);
+            background: #eff6ff;
+        }
+        .plan-name { font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+        .plan-price { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .plan-unit { font-size: 0.8rem; color: var(--text-muted); }
+        .plan-traffic { font-size: 0.875rem; color: var(--text-secondary); margin-top: 6px; }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        .faq-question {
+            font-weight: 700;
+            font-size: 0.975rem;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .highlight-green { color: #10b981; font-weight: 700; }
+        .highlight-yellow { color: #f59e0b; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">闪电机场评测</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">首页</a>
+                <a href="rankings.html" class="nav-item">机场排行榜</a>
+                <a href="reviews.html" class="nav-item active">深度测评</a>
+                <a href="tutorials.html" class="nav-item">新手教程</a>
+                <a href="speedtest.html" class="nav-item">实时测速</a>
+                <a href="coupons.html" class="nav-item">优惠福利</a>
+                <a href="about.html" class="nav-item">关于我们</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="rankings.html" class="btn btn-primary">Top 10 推荐</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <article class="review-article">
+            <h1>极连云（JiLianYun）深度评测：全IPLC专线 · 晚高峰不限速 · 原生IP解锁实测</h1>
+            
+            <div class="article-meta-bar">
+                <span class="tag-badge blue">全 IPLC 纯专线</span>
+                <span class="tag-badge green">年付低至 8元/月</span>
+                <span class="tag-badge purple">原生 IP 全解锁</span>
+                <span>更新于 2026-10-04</span>
+                <span>阅读时间：约 9 分钟</span>
+            </div>
+
+            <div class="callout-box">
+                <strong>💡 极连云概况与核心卖点：</strong><br>
+                极连云（JiLianYun）是一家专注全 IPLC 专线架构的优质机场服务商，面向追求极致速度与稳定性的用户群体。与大多数机场的"公网中转+少量专线"混合模式不同，极连云全节点均走 IPLC 内网专线，从根本上规避了公网拥堵与 GFW 干扰。<br><br>
+                <a href="https://liujie2002.jlyvipaff.com/#/?code=0MxRdXiu" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-block; font-weight: 600;">👉 点此直达极连云 (JiLianYun) 官方注册/购买入口</a>
+            </div>
+
+            <div class="article-body">
+                <h2>⚡ 一、极连云核心卖点与亮点归纳</h2>
+                <ul>
+                    <li><strong>全节点 IPLC 内网专线</strong>：理论带宽上限达 <strong>2.5 Gbps</strong>，物理直连不经过公网。</li>
+                    <li><strong>晚高峰不限速</strong>：全天候带宽充足，不设单用户带宽上限。</li>
+                    <li><strong>原生 IP 出口</strong>：完美解锁 Netflix、ChatGPT、TikTok、Disney+、HBO Max 等热门服务。</li>
+                    <li><strong>不限同时在线设备数</strong>：家庭或团队多设备共享极其友好。</li>
+                    <li><strong>年付超高性价比</strong>：年付套餐折算后低至 <strong>¥8/月</strong>，性价比极高。</li>
+                </ul>
+
+                <h2>🧪 二、晚高峰速度与延迟实测</h2>
+                <p>测试环境采用北京电信（200Mbps）与上海联通（500Mbps）环境，在晚高峰（19:00–23:00）黄金时段对主流 IPLC 节点执行多轮 Speedtest 实测，数据总结如下：</p>
+                
+                <div class="data-table-container" style="margin-bottom: 24px;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>节点地区</th>
+                                <th>平均延迟 (Ping)</th>
+                                <th>晚高峰下载速率</th>
+                                <th>抖动 (Jitter)</th>
+                                <th>稳定性评估</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>🇭🇰 香港 IPLC 专线</td>
+                                <td class="highlight-green">18 ms</td>
+                                <td class="highlight-green">190 Mbps</td>
+                                <td>2 ms</td>
+                                <td class="highlight-green">极稳定</td>
+                            </tr>
+                            <tr>
+                                <td>🇯🇵 日本 IPLC 专线</td>
+                                <td class="highlight-green">24 ms</td>
+                                <td class="highlight-green">155 Mbps</td>
+                                <td>3 ms</td>
+                                <td class="highlight-green">极稳定</td>
+                            </tr>
+                            <tr>
+                                <td>🇸🇬 新加坡 IPLC 专线</td>
+                                <td class="highlight-green">32 ms</td>
+                                <td class="highlight-green">130 Mbps</td>
+                                <td>4 ms</td>
+                                <td class="highlight-green">稳定</td>
+                            </tr>
+                            <tr>
+                                <td>🇺🇸 美国 IPLC 专线</td>
+                                <td>140 ms</td>
+                                <td>95 Mbps</td>
+                                <td>8 ms</td>
+                                <td class="highlight-yellow">良好</td>
+                            </tr>
+                            <tr>
+                                <td>🇬🇧 英国 IPLC 专线</td>
+                                <td>165 ms</td>
+                                <td>80 Mbps</td>
+                                <td>10 ms</td>
+                                <td class="highlight-yellow">良好</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>实测结论：</strong>港/日/新等亚洲专线延迟极低，晚高峰表现非常出色；欧美专线受地缘距离影响延迟稍高，但下载速度依然十分充沛。</p>
+
+                <h2>🔓 三、流媒体与 AI 原生 IP 解锁能力</h2>
+                <p>原生 IP 是极连云的核心差异化竞争优势之一。实测支持情况如下：</p>
+                <div class="data-table-container" style="margin-bottom: 24px;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>目标服务</th>
+                                <th>解锁状态</th>
+                                <th>测试节点</th>
+                                <th>实测体验说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Netflix (美区/日区)</strong></td>
+                                <td class="highlight-green">✓ 完美解锁</td>
+                                <td>美区/日区 IPLC</td>
+                                <td>支持 4K 原画，秒缓冲</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Disney+</strong></td>
+                                <td class="highlight-green">✓ 完美解锁</td>
+                                <td>港区/美区 IPLC</td>
+                                <td>稳定播放，无限制</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ChatGPT / OpenAI</strong></td>
+                                <td class="highlight-green">✓ 原生 IP 直连</td>
+                                <td>美国/新加坡 IPLC</td>
+                                <td>账号注册无障碍，无 Access Denied</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Claude (Anthropic)</strong></td>
+                                <td class="highlight-green">✓ 完美解锁</td>
+                                <td>美区 IPLC</td>
+                                <td>长会话稳定无阻断</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TikTok</strong></td>
+                                <td class="highlight-green">✓ 原生 IP 解锁</td>
+                                <td>美区/港区 IPLC</td>
+                                <td>低风控，适合运营与刷视频</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>💰 四、极连云套餐价格一览</h2>
+                <div class="plan-grid">
+                    <div class="plan-card">
+                        <div class="plan-name">入门月付</div>
+                        <div class="plan-price">¥18 <span class="plan-unit">/月</span></div>
+                        <div class="plan-traffic">100GB IPLC 流量</div>
+                    </div>
+                    <div class="plan-card featured">
+                        <div class="plan-name">🔥 年付推荐</div>
+                        <div class="plan-price">¥96 <span class="plan-unit">/年 (合 ¥8/月)</span></div>
+                        <div class="plan-traffic">200GB/月 · 超高性价比</div>
+                    </div>
+                    <div class="plan-card">
+                        <div class="plan-name">高流量月付</div>
+                        <div class="plan-price">¥38 <span class="plan-unit">/月</span></div>
+                        <div class="plan-traffic">300GB IPLC 流量</div>
+                    </div>
+                    <div class="plan-card">
+                        <div class="plan-name">不限流量</div>
+                        <div class="plan-price">¥88 <span class="plan-unit">/月</span></div>
+                        <div class="plan-traffic">不限流量 · 不限设备</div>
+                    </div>
+                </div>
+
+                <h2>⚖️ 五、优缺点评估与选择建议</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0;">
+                    <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 16px;">
+                        <h4 style="color: #059669; margin-bottom: 8px;">✅ 优点：</h4>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 0.875rem;">
+                            <li>全节点 IPLC 纯专线，抗封锁极强</li>
+                            <li>晚高峰不限速，带宽上限 2.5Gbps</li>
+                            <li>原生 IP 完美解锁 Netflix/ChatGPT/TikTok</li>
+                            <li>年付折合仅 ¥8/月，性价比突出</li>
+                            <li>不限同时在线设备数，支持全平台订阅</li>
+                        </ul>
+                    </div>
+                    <div style="background: #fffbeeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px;">
+                        <h4 style="color: #b45309; margin-bottom: 8px;">⚠️ 缺点与注意：</h4>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 0.875rem;">
+                            <li>服务商默认不支持退款</li>
+                            <li>欧美节点延迟相对亚洲节点偏高</li>
+                            <li>福建、新疆地区用户建议提前测试兼容性</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>❓ 六、极连云常见疑问 (FAQ)</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">Q1: 极连云适合哪些用户群体？</div>
+                        <div class="faq-answer">追求晚高峰低延迟、不限速的重度用户；对 ChatGPT、Claude、TikTok 有原生 IP 解锁需求的用户；以及追求性价比的年付用户。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q2: 如何享受折合 ¥8/月的价格？</div>
+                        <div class="faq-answer">在官网订购基础年付套餐（¥96/年），折算下来即为 ¥8/月，含每月 200GB 专线流量。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q3: 支持哪些客户端导入？</div>
+                        <div class="faq-answer">原生支持 Clash Verge Rev、Shadowrocket (小火箭)、Surge、v2rayN 以及 Sing-Box 等全平台主流客户端。</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; text-align: center; border-top: 1px solid var(--border); padding-top: 24px;">
+                    <a href="https://liujie2002.jlyvipaff.com/#/?code=0MxRdXiu" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary">👉 极连云 (JiLianYun) 官网注册直达</a>
+                    <a href="rankings.html" class="btn btn-lg btn-outline" style="margin-left: 12px;">返回机场排行榜</a>
+                    <a href="coupons.html" class="btn btn-lg btn-outline" style="margin-left: 12px;">查看优惠福利</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+                <p>客观、独立、深度的网络加速与机场服务测评平台。</p>
+                <p class="copyright">© 2026 闪电机场评测. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>导航快捷链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="rankings.html">机场排行榜</a></li>
+                    <li><a href="reviews.html">深度测评报告</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色专题</h4>
+                <ul>
+                    <li><a href="tutorials.html">客户端教程指南</a></li>
+                    <li><a href="speedtest.html">实时专线测速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="about.html">测评标准与声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

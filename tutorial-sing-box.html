@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sing-box 极速上手教程：2026 新一代跨平台通用代理客户端全指南 | 闪电机场评测</title>
+    <meta name="description" content="2026最前沿 sing-box 极速上手配置教程。讲解新一代通用代理通用内核 sing-box 在 Windows, macOS, Android, iOS 上的图形客户端下载、JSON与订阅导入、Hysteria2/TUIC/Reality 协议配置。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .review-article { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+        .review-article h1 { font-size: 1.85rem; line-height: 1.35; margin-bottom: 16px; color: var(--text-primary); }
+        .article-meta-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 0.85rem; color: var(--text-muted); padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+        .tag-badge { padding: 4px 10px; border-radius: 4px; font-weight: 600; font-size: 0.775rem; }
+        .tag-badge.orange { background: #fffbeeb; color: #b45309; border: 1px solid #fde68a; }
+        .callout-box { background: #f8fafc; border-left: 4px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 24px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
+        .article-body h2 { font-size: 1.45rem; margin-top: 36px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+        .article-body h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 12px; color: var(--text-primary); }
+        .article-body p, .article-body li { line-height: 1.8; color: var(--text-secondary); font-size: 0.975rem; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+        .article-body li { margin-bottom: 8px; }
+        .faq-section { margin-top: 40px; background: #fafafa; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; }
+        .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-question { font-weight: 700; color: var(--text-primary); margin-bottom: 8px; font-size: 1.05rem; }
+        .faq-answer { color: var(--text-secondary); line-height: 1.65; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">首页</a>
+                <a href="rankings.html" class="nav-item">机场排行榜</a>
+                <a href="reviews.html" class="nav-item">深度测评</a>
+                <a href="tutorials.html" class="nav-item active">新手教程</a>
+                <a href="speedtest.html" class="nav-item">实时测速</a>
+                <a href="coupons.html" class="nav-item">优惠福利</a>
+                <a href="about.html" class="nav-item">关于我们</a>
+            </nav>
+            <div class="nav-actions"><a href="rankings.html" class="btn btn-primary">Top 10 推荐</a></div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="grid grid-3-1">
+            <div class="main-content">
+                <article class="review-article" id="sing-box-tutorial">
+                    <h1>sing-box 极速上手教程：2026 新一代跨平台通用代理客户端全指南</h1>
+                    <div class="article-meta-bar">
+                        <span class="tag-badge orange">全平台 Sing-Box</span>
+                        <span>更新于 2026-10-04</span>
+                        <span>阅读时间：约 13 分钟</span>
+                        <span>作者：闪电评测团队</span>
+                    </div>
+
+                    <div class="callout-box">
+                        <strong>导读：</strong><strong>sing-box</strong> 是由 SagerNet 团队倾力打造的新一代通用代理内核与全平台客户端。它支持极其前沿的加密传输协议（如 <code>Hysteria 2</code>、<code>TUIC v5</code>、<code>VLESS-Reality</code>、<code>ShadowTLS</code>），并以极其惊人的并发性能与超低内存消耗席卷全局。本文带您快速掌握这款下一代客户端的极速配置。
+                    </div>
+
+                    <div class="article-body">
+                        <h2>一、sing-box 的核心技术优势与未来趋势</h2>
+                        <p>相较于传统的 V2Ray/Xray 或旧版 Clash 内核，sing-box 在底层架构设计上实现了颠覆性的提升：</p>
+                        <ul>
+                            <li><strong>真正全平台统一架构：</strong> 同一套 Go 代码运行于 iOS, Android, macOS, Windows, Linux, Router 路由器。</li>
+                            <li><strong>原生支持次世代抗封锁协议：</strong> 零延迟握手的 <code>TUIC v5</code>、基于 UDP 极速拥塞控制的 <code>Hysteria 2</code> 以及无需域名证书的 <code>VLESS-Reality</code> 原生无缝集成。</li>
+                            <li><strong>极极致的网络吞吐与低延迟：</strong> 优化了内存分配器与网络 Stack，在大带宽下载或 8K 视频播放时 CPU 占用比传统客户端降低约 40%。</li>
+                        </ul>
+
+                        <h2>二、各平台图形客户端 GUI 下载直达</h2>
+                        <p>推荐广大新手使用带图形界面的图形客户端，无需手动编写复杂的 JSON 代码：</p>
+                        <ul>
+                            <li><strong>iOS / iPadOS：</strong> 在 App Store（需美区等外区 Apple ID）搜索下载 <code>sing-box</code>，免费无广告。</li>
+                            <li><strong>Android 安卓端：</strong> 官方 GitHub 下载 <code>SFA-xxxx-universal.apk</code>：<a href="https://github.com/SagerNet/sing-box/releases" target="_blank" rel="noopener noreferrer">SagerNet/sing-box Releases</a>。</li>
+                            <li><strong>Windows / macOS 桌面端：</strong> 推荐使用第三方的 <code>sing-box-gui</code> 或基于其内核的 <code>GUI.for.Sing-Box</code> 客户端。</li>
+                        </ul>
+
+                        <h2>三、机场订阅转换与一键导入实操</h2>
+                        <p>配合优秀的专线机场能最大程度释放 sing-box 的吞吐潜能。推荐参阅 <a href="rankings.html">2026 机场排行榜</a> 选购 <a href="article-sujie.html">速界专线机场</a> 或 <a href="article-jilianyun.html">极连云</a>。</p>
+                        <ol>
+                            <li>在支持 sing-box 的机场后台，直接复制 <strong>sing-box 专用订阅链接 (URL 或 JSON 链接)</strong>。</li>
+                            <li>若机场未直接提供，可使用安全的开源订阅转换工具（如 Sub-Store），将 Clash 订阅一键转换为 sing-box 配置文件。</li>
+                            <li>打开 sing-box 客户端应用，进入 <strong>“Profiles (配置)”</strong> 标签页。</li>
+                            <li>点击 <strong>“Add Profile (添加配置)”</strong>，选择 <strong>“Type: Remote (远程订阅)”</strong>。</li>
+                            <li>在 URL 栏粘贴订阅链接，填入名称并点击“保存 (Save)”。</li>
+                            <li>在主界面拉取下载节点卡片后，点击 <strong>“Enable / Start”</strong> 主开关开启 VPN/TUN 加速服务。</li>
+                        </ol>
+
+                        <div class="faq-section" id="faq">
+                            <h2>❓ sing-box 客户常见问题 FAQ (8条)</h2>
+                            <div class="faq-item">
+                                <div class="faq-question">Q1: sing-box 与 Clash 和 v2rayN 相比，最大的优势是什么？我应该切换吗？</div>
+                                <div class="faq-answer">答：sing-box 最大的优势是“协议最新、吞吐性能最高、全平台免费”。如果您的机场节点大量采用了 Hysteria 2、TUIC v5 或 Reality 等最新协议，使用 sing-box 可以获得比旧版 Clash 显著更低的延迟与更快的打满带宽速度，非常值得体验。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q2: 为什么导入 Clash 的 `.yaml` 订阅链接到 sing-box 提示“Format Error”？</div>
+                                <div class="faq-answer">答：因为 sing-box 采用的是结构化的 `.json` 配置文件格式，并不直接兼容 Clash 的 `.yaml` 规则结构。请在机场后台选择“sing-box 订阅”或者使用 Sub-Store / Subconverter 转换服务将其转换为 JSON 格式。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q3: 在 iOS 苹果手机上下载 sing-box 需要收费吗？</div>
+                                <div class="faq-answer">答：完全免费！不同于 Shadowrocket（小火箭）的 $2.99 费用，sing-box 在美区 App Store 是一款 100% 免费且无广告的开源软件，只需登录美区 Apple ID 搜索 `sing-box` 即可直接免费获取。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q4: sing-box 开启后为什么国内网页和微信打不开？</div>
+                                <div class="faq-answer">答：通常是因为导入的配置文件中缺少 `geoip:cn` 和 `geosite:cn` 的分流规则，导致所有流量被强制走代理。请确保在配置文件中包含了规则集 (Rule Sets) 配置，使国内 IP 与域名走 `direct` 直连出站。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q5: 如何在 Windows 上配置 sing-box 开启 TUN 全局网络接管？</div>
+                                <div class="faq-answer">答：在 Windows 端图形界面中，进入 `Settings -> Inbound` 设置，选择开启 `TUN Mode`。必须以“管理员身份运行”客户端，软件会自动调用 WinTun 驱动完成虚拟网卡创建。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q6: Hysteria 2 协议在 sing-box 中断连率高是什么原因？</div>
+                                <div class="faq-answer">答：Hysteria 2 协议基于 UDP。如果您的本地运营商（如中国移动或某些地方电信）对 UDP 流量有严格的 QoS 限速或丢包限制，会导致连接不稳定。此时可在节点配置中调整 `up_mbps` 和 `down_mbps` 速率控制参数。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q7: sing-box 支持类似 Clash 的自动节点选择 (UrlTest / Fallback) 吗？</div>
+                                <div class="faq-answer">答：完全支持。sing-box 在 Outbounds 配置中支持类型为 `urltest` 的出站组，可设置自动测试间隔时间与容差，自动切换为延迟最快的高速节点。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q8: 手工编辑 sing-box JSON 配置文件时，推荐用什么代码编辑器？</div>
+                                <div class="faq-answer">答：推荐使用 VS Code (Visual Studio Code)。安装 `JSON` 与 `sing-box Schema` 插件，语法高亮和实时代码校验可以有效防止拼写错误导致的配置解析失败。</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>⚡ 推荐高速专线机场</h3>
+                    <div class="mini-card-list">
+                        <div class="mini-card">
+                            <span class="rank-num top-1">1</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-sujie.html">速界 (SpeedWorld)</a></h4>
+                                <p>IEPL专线 · ￥6/月起</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-2">2</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-jilianyun.html">极连云 (JiLianYun)</a></h4>
+                                <p>原生IP解锁 · 8K极速</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-3">3</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-bianyuanjiedian.html">边缘节点 (EdgeNode)</a></h4>
+                                <p>自研客户端 · 不限设备</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>📚 客户端生态总览</h3>
+                    <ul class="widget-links">
+                        <li><a href="tutorial-clash-verge.html">Clash Verge Rev 教程</a></li>
+                        <li><a href="tutorial-shadowrocket.html">Shadowrocket (小火箭) 教程</a></li>
+                        <li><a href="tutorial-v2rayn.html">v2rayN Windows 配置</a></li>
+                        <li><a href="tutorial-android.html">安卓手机客户端选型</a></li>
+                        <li><a href="tutorial-mac.html">Mac 苹果电脑配置</a></li>
+                        <li><a href="tutorial-sing-box.html" class="active">sing-box 极速上手</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+                <p>© 2026 闪电机场评测. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>导航快捷链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="rankings.html">机场排行榜</a></li>
+                    <li><a href="tutorials.html">客户端教程指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色专题</h4>
+                <ul>
+                    <li><a href="reviews.html">深度测评报告</a></li>
+                    <li><a href="speedtest.html">实时专线测速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="about.html">测评标准与声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

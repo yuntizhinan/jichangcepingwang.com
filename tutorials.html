@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全平台客户端新手使用教程与生态总览 | 闪电机场评测</title>
+    <meta name="description" content="零基础科学上网客户端全平台教程使用指南。涵盖 Clash Verge Rev, Shadowrocket 小火箭, v2rayN, 安卓选型, Mac苹果配置与 sing-box 极速上手。">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .eco-overview-card { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 32px; margin-top: 40px; box-shadow: var(--shadow-sm); }
+        .eco-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+        .eco-title { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 10px; }
+        .eco-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        .eco-item-card { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; transition: all 0.2s ease; background: #fafafa; }
+        .eco-item-card:hover { border-color: var(--primary); background: #ffffff; transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+        .eco-item-card h4 { font-size: 1.1rem; margin-bottom: 10px; }
+        .eco-item-card h4 a { color: var(--text-primary); text-decoration: none; }
+        .eco-item-card h4 a:hover { color: var(--primary); }
+        .eco-item-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+        .eco-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+        .eco-tag.blue { background: #eff6ff; color: #2563eb; }
+        .eco-tag.purple { background: #f3e8ff; color: #7e22ce; }
+        .eco-tag.cyan { background: #e0f2fe; color: #0369a1; }
+        .eco-tag.green { background: #ecfdf5; color: #059669; }
+        .eco-tag.orange { background: #fffbeeb; color: #b45309; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">闪电机场评测</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">首页</a>
+                <a href="rankings.html" class="nav-item">机场排行榜</a>
+                <a href="reviews.html" class="nav-item">深度测评</a>
+                <a href="tutorials.html" class="nav-item active">新手教程</a>
+                <a href="speedtest.html" class="nav-item">实时测速</a>
+                <a href="coupons.html" class="nav-item">优惠福利</a>
+                <a href="about.html" class="nav-item">关于我们</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="rankings.html" class="btn btn-primary">Top 10 推荐</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <!-- 图2：全平台客户端新手使用教程 -->
+        <div class="section-header">
+            <h2>📚 全平台客户端新手使用教程</h2>
+            <p>从客户端下载、订阅转换到节点导入，一步到位完成配置</p>
+        </div>
+
+        <!-- 图2下方：客户端生态总览 (图1标题点开直达) -->
+        <section class="eco-overview-card" id="client-ecosystem">
+            <div class="eco-header">
+                <div class="eco-title">
+                    <span>📱</span> 客户端生态总览
+                </div>
+                <span style="font-size: 0.875rem; color: var(--text-muted);">点击标题直达 2000字专业教程与 8条常见问题 FAQ</span>
+            </div>
+
+            <div class="eco-grid">
+                <div class="eco-item-card">
+                    <span class="eco-tag blue">Windows / Mac</span>
+                    <h4><a href="tutorial-clash-verge.html">Clash Verge Rev 教程</a></h4>
+                    <p>基于 Rust + Tauri 的 2026 最强 Clash 替代客户端。详解下载、订阅导入、TUN 模式全流程与 8条 FAQ。</p>
+                    <a href="tutorial-clash-verge.html" class="card-link">阅读完整教程 &rarr;</a>
+                </div>
+
+                <div class="eco-item-card">
+                    <span class="eco-tag purple">iOS 苹果端</span>
+                    <h4><a href="tutorial-shadowrocket.html">Shadowrocket (小火箭) 教程</a></h4>
+                    <p>iOS 口碑最佳代理工具。图文讲解外区 Apple ID 获取、节点订阅导入、智能规则分流与 FAQ 指南。</p>
+                    <a href="tutorial-shadowrocket.html" class="card-link">阅读完整教程 &rarr;</a>
+                </div>
+
+                <div class="eco-item-card">
+                    <span class="eco-tag cyan">Windows 经典</span>
+                    <h4><a href="tutorial-v2rayn.html">v2rayN Windows 配置</a></h4>
+                    <p>资深代理工具全面解析。覆盖 .NET 环境依赖、Xray/sing-box 内核切换、路由规则及 FAQ 排除。</p>
+                    <a href="tutorial-v2rayn.html" class="card-link">阅读完整教程 &rarr;</a>
+                </div>
+
+                <div class="eco-item-card">
+                    <span class="eco-tag green">Android 系统</span>
+                    <h4><a href="tutorial-android.html">安卓手机客户端选型</a></h4>
+                    <p>Clash Meta, v2rayNG, Sing-Box 四大工具横向对比。附带后台保活防杀设置与 8条常见问题 FAQ。</p>
+                    <a href="tutorial-android.html" class="card-link">阅读完整教程 &rarr;</a>
+                </div>
+
+                <div class="eco-item-card">
+                    <span class="eco-tag blue">macOS 专版</span>
+                    <h4><a href="tutorial-mac.html">Mac 苹果电脑配置</a></h4>
+                    <p>适配 Apple Silicon M1-M4 芯片。全面解决损坏提示、GATEKEEPER 授权、终端代理及 FAQ 排查。</p>
+                    <a href="tutorial-mac.html" class="card-link">阅读完整教程 &rarr;</a>
+                </div>
+
+                <div class="eco-item-card">
+                    <span class="eco-tag orange">全平台极速</span>
+                    <h4><a href="tutorial-sing-box.html">sing-box 极速上手</a></h4>
+                    <p>新一代通用内核。原生支持 Hysteria 2、TUIC v5 和 Reality 协议，提供 8条客户 FAQ 与极速测速。</p>
+                    <a href="tutorial-sing-box.html" class="card-link">阅读完整教程 &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+                <p>© 2026 闪电机场评测. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>导航快捷链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="rankings.html">机场排行榜</a></li>
+                    <li><a href="tutorials.html">客户端教程指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色专题</h4>
+                <ul>
+                    <li><a href="reviews.html">深度测评报告</a></li>
+                    <li><a href="speedtest.html">实时专线测速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="about.html">测评标准与声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

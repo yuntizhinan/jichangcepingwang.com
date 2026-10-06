@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Verge Rev 教程：2026零基础全平台配置与TUN模式指南 | 闪电机场评测</title>
+    <meta name="description" content="2026最全 Clash Verge Rev 使用教程。详细讲解基于 Rust+Tauri 架构的 Clash Verge 下载安装、机场订阅导入、TUN虚拟网卡模式设置、规则分流与常见故障处理。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .review-article { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+        .review-article h1 { font-size: 1.85rem; line-height: 1.35; margin-bottom: 16px; color: var(--text-primary); }
+        .article-meta-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 0.85rem; color: var(--text-muted); padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+        .tag-badge { padding: 4px 10px; border-radius: 4px; font-weight: 600; font-size: 0.775rem; }
+        .tag-badge.blue { background: #eff6ff; color: var(--primary); border: 1px solid #bfdbfe; }
+        .callout-box { background: #f8fafc; border-left: 4px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 24px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
+        .article-body h2 { font-size: 1.45rem; margin-top: 36px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+        .article-body h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 12px; color: var(--text-primary); }
+        .article-body p, .article-body li { line-height: 1.8; color: var(--text-secondary); font-size: 0.975rem; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+        .article-body li { margin-bottom: 8px; }
+        .faq-section { margin-top: 40px; background: #fafafa; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; }
+        .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-question { font-weight: 700; color: var(--text-primary); margin-bottom: 8px; font-size: 1.05rem; }
+        .faq-answer { color: var(--text-secondary); line-height: 1.65; font-size: 0.95rem; }
+        .code-block { background: #0d1117; color: #c9d1d9; padding: 14px 18px; border-radius: 6px; font-family: monospace; font-size: 0.875rem; overflow-x: auto; margin: 16px 0; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">首页</a>
+                <a href="rankings.html" class="nav-item">机场排行榜</a>
+                <a href="reviews.html" class="nav-item">深度测评</a>
+                <a href="tutorials.html" class="nav-item active">新手教程</a>
+                <a href="speedtest.html" class="nav-item">实时测速</a>
+                <a href="coupons.html" class="nav-item">优惠福利</a>
+                <a href="about.html" class="nav-item">关于我们</a>
+            </nav>
+            <div class="nav-actions"><a href="rankings.html" class="btn btn-primary">Top 10 推荐</a></div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="grid grid-3-1">
+            <div class="main-content">
+                <article class="review-article" id="clash-verge-tutorial">
+                    <h1>Clash Verge Rev 零基础教程：2026全平台配置、TUN模式与故障排查</h1>
+                    <div class="article-meta-bar">
+                        <span class="tag-badge blue">Windows / macOS</span>
+                        <span>更新于 2026-10-04</span>
+                        <span>阅读时间：约 12 分钟</span>
+                        <span>作者：闪电评测团队</span>
+                    </div>
+
+                    <div class="callout-box">
+                        <strong>导读：</strong>随着旧版 Clash for Windows 及 Clash Premium 停止维护，<strong>Clash Verge Rev</strong> 凭借其基于 Rust + Tauri 的极其高效的底层架构与原生 Mihomo 内核集成，已成为 2026 年桌面端最受推荐的科学上网客户端。本文将从软件获取、订阅配置、TUN 模式接管到高级分流展开全方位实操指导。
+                    </div>
+
+                    <div class="article-body">
+                        <h2>一、Clash Verge Rev 的核心优势与技术选型</h2>
+                        <p>Clash Verge Rev 重新定义了桌面端代理客户端的体验。与传统 Electron 框架的客户端相比，它具有以下科学与工程优势：</p>
+                        <ul>
+                            <li><strong>极低的内存与 CPU 占用：</strong> 借助 Tauri 跨平台技术，日常后台运行仅占用约 30MB - 50MB 内存，启动速度大幅提升。</li>
+                            <li><strong>集成开源 Mihomo (Clash.Meta) 内核：</strong> 完美支持现代加密协议如 <code>Hysteria2</code>、<code>TUIC v5</code>、<code>VLESS-Reality</code> 及 <code>SS-2022</code>，解除了旧内核的协议限制。</li>
+                            <li><strong>智能内存分流与 DNS 防污染：</strong> 内置高效 Fake-IP 与 Redir-Host 模式，彻底解决国内域名解析缓慢及 DNS 污染问题。</li>
+                            <li><strong>可视化系统接管：</strong> 提供了轻量化 TUN 虚拟网卡一键开启机制，可完美代理 UWP 应用、Steam 商店及命令行终端。</li>
+                        </ul>
+
+                        <h2>二、软件下载与安全安装指南</h2>
+                        <p>由于网络存在大量伪造的恶意编译版本，请务必通过以下官方正规渠道下载：</p>
+                        <ul>
+                            <li><strong>官方 GitHub Release 仓库：</strong> <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener noreferrer">clash-verge-rev/releases (点击跳转官方)</a></li>
+                            <li><strong>Windows 系统：</strong> 64位 Windows 10/11 用户推荐下载 <code>Clash.Verge_x64-setup.exe</code> 安装程序；若需免安装可选 Portable 绿色压缩包。</li>
+                            <li><strong>macOS 系统：</strong> Apple Silicon (M1/M2/M3/M4) 芯片选择 <code>aarch64.dmg</code>，Intel 芯片选择 <code>x64.dmg</code>。安装后拖入 Applications 目录即可。</li>
+                        </ul>
+
+                        <h2>三、导入机场订阅与节点切换</h2>
+                        <p>拥有优质的机场节点是流畅科学上网的前提。您可以参考我们的 <a href="rankings.html">2026 年机场推荐排行榜</a> 选择如 <a href="article-sujie.html">速界机场</a> 或 <a href="article-jilianyun.html">极连云</a> 等高速 IEPL 专线节点。</p>
+                        <ol>
+                            <li>复制您在机场后台获得的 <strong>Clash 格式订阅链接 (URL)</strong>。</li>
+                            <li>打开 Clash Verge Rev 界面，在左侧边栏点击 <strong>“订阅 (Profiles)”</strong>。</li>
+                            <li>在顶部地址栏输入框粘贴订阅 URL，并在“备注”栏填入机场名称（可选），随后点击右侧的 <strong>“导入 (Import)”</strong> 按钮。</li>
+                            <li>导入完成后，列表会显示刚下载的配置文件。<strong>鼠标左键单击该配置</strong>，确保其左侧显示选中高亮状态。</li>
+                            <li>点击左侧边栏 <strong>“代理 (Proxies)”</strong>，切换到 <strong>“Rule (规则分流)”</strong> 模式。选择延迟最低的专线节点（可点击右上角⚡雷电图标执行批量延迟测试）。</li>
+                            <li>在左侧边栏进入 <strong>“设置 (Settings)”</strong>，开启 <strong>“系统代理 (System Proxy)”</strong> 开关，此时您的浏览器即可正常访问海外网络。</li>
+                        </ol>
+
+                        <h2>四、开启 TUN 虚拟网卡模式（全局接管）</h2>
+                        <p>普通系统代理（System Proxy）仅能作用于遵循 HTTP 代理协议的浏览器及部分应用。若要让 CMD 命令行、Git、Epic/Steam 游戏客户端或 Spotify 走代理，需开启 TUN 模式：</p>
+                        <ol>
+                            <li>点击左侧边栏的 <strong>“设置 (Settings)”</strong> 选项。</li>
+                            <li>找到 <strong>“TUN 模式 (TUN Mode)”</strong> 开关并点击开启。</li>
+                            <li>首次开启时，Windows 会弹出 UAC 管理员权限授权提示，请点击“是 (Yes)”。Clash Verge Rev 将自动安装虚拟网卡服务。</li>
+                            <li>开启成功后，软件顶部状态栏会显示 TUN 运行图标，全局所有软件网络请求均会被智能分流加速。</li>
+                        </ol>
+
+                        <h2>五、优化系统设置与规则自动化</h2>
+                        <p>为保障日常使用的稳定与省电，推荐在“设置”页面进行以下优化调整：</p>
+                        <ul>
+                            <li><strong>开机自启动：</strong> 勾选 <code>Auto Launch</code>，开机自动静默后台运行。</li>
+                            <li><strong>静默启动：</strong> 勾选 <code>Silent Start</code>，避免开机弹窗口打扰。</li>
+                            <li><strong>自动更新订阅：</strong> 进入“订阅”页面，右键点击订阅卡片，设置“自动刷新间隔”为 24 小时。</li>
+                        </ul>
+
+                        <div class="faq-section" id="faq">
+                            <h2>❓ Clash Verge Rev 客户常见问题 FAQ (8条)</h2>
+                            <div class="faq-item">
+                                <div class="faq-question">Q1: 为什么导入机场订阅时提示 Network Error 或 Download Failed？</div>
+                                <div class="faq-answer">答：该问题通常由于机场订阅域名遭受公网 DNS 干扰。解决方案：1) 将订阅链接粘贴至浏览器尝试能否直接下载；2) 若机场提供备用订阅域名或短链接，尝试使用备用域名；3) 先开启手机热点或借用临时代理节点后再进行订阅更新。推荐选购带有稳定防封域名订阅的机场，如 <a href="article-sujie.html">速界专线机场</a>。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q2: 开启系统代理后，为什么网页依然打不开且显示“无网络连接”？</div>
+                                <div class="faq-answer">答：请执行以下排查：1. 进入“代理”页面，确认是否已选中某个具体节点（若未选中节点，流量无法传出）；2. 检查系统时间是否精准与北京时间同步，网络时间偏差超过 30 秒会导致 TLS 安全握手失败；3. 检查是否有第三方杀毒软件（如 360 或杀毒管家）拦截了 Clash 的本地代理端口。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q3: 系统代理模式与 TUN 模式有什么区别？日常应该如何选择？</div>
+                                <div class="faq-answer">答：系统代理通过修改 Windows/macOS 系统 HTTP 代理设置生效，仅对浏览器及遵循系统代理的常规软件起作用；TUN 模式通过在系统内核层建立虚拟网卡，接管所有 TCP/UDP 流量。日常网页浏览推荐开启系统代理即可；玩海外游戏、使用 Git 命令行或 Terminal 时推荐开启 TUN 模式。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q4: 为什么节点延迟测试全部显示 Timeout（超时）？</div>
+                                <div class="faq-answer">答：可能由三种原因导致：1) 机场订阅服务已到期或流量耗尽，请登录机场后台检查套餐状态；2) 软件中设置的延迟测试 URL 失效，可在设置中修改为 `https://www.google.com/generate_204`；3) 本地网络防火墙阻断了测速请求，尝试在“设置”中将 Clash 内核切换为 Mihomo 尝试。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q5: 开启 Clash 后，国内微信、QQ 或哔哩哔哩速度变慢怎么办？</div>
+                                <div class="faq-answer">答：请务必确保代理运行模式切换为“Rule (规则模式)”，切勿误切为“Global (全局模式)”。规则模式下，国内网站流量会通过 Local 规则直接连接，不经过代理节点，速度与平时完全一致且不消耗流量。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q6: Clash Verge Rev 如何切换与更新 Mihomo (Clash.Meta) 内核？</div>
+                                <div class="faq-answer">答：在软件左侧点击“设置”-> 找到“Clash 内核 (Clash Core)”选项。软件默认开启 Mihomo 内核。若需更新内核，点击旁边的“更新”图标即可自动下载安装官方最新内核版本。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q7: macOS 系统提示“无法打开，因为无法确认开发者”怎么解决？</div>
+                                <div class="faq-answer">答：这是 macOS 的 Gatekeeper 安全机制提示。解决办法：打开 macOS `系统设置 -> 隐私与安全性`，找到底部的“仍要打开”按钮点击允许；或者在终端中运行命令 `sudo xattr -rd com.apple.quarantine /Applications/Clash\ Verge.app` 即可解锁。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Q8: 软件升级更新后原有订阅配置和节点会丢失吗？</div>
+                                <div class="faq-answer">答：不会。Clash Verge Rev 的配置文件与软件本体相互独立存储。直接下载新的 `.exe` 或 `.dmg` 覆盖安装即可无缝继承原有节点与偏好设置。</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>⚡ 推荐高速专线机场</h3>
+                    <div class="mini-card-list">
+                        <div class="mini-card">
+                            <span class="rank-num top-1">1</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-sujie.html">速界 (SpeedWorld)</a></h4>
+                                <p>IEPL专线 · ￥6/月起</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-2">2</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-jilianyun.html">极连云 (JiLianYun)</a></h4>
+                                <p>原生IP解锁 · 8K极速</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <span class="rank-num top-3">3</span>
+                            <div class="mini-card-info">
+                                <h4><a href="article-bianyuanjiedian.html">边缘节点 (EdgeNode)</a></h4>
+                                <p>自研客户端 · 不限设备</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>📚 客户端生态总览</h3>
+                    <ul class="widget-links">
+                        <li><a href="tutorial-clash-verge.html" class="active">Clash Verge Rev 教程</a></li>
+                        <li><a href="tutorial-shadowrocket.html">Shadowrocket (小火箭) 教程</a></li>
+                        <li><a href="tutorial-v2rayn.html">v2rayN Windows 配置</a></li>
+                        <li><a href="tutorial-android.html">安卓手机客户端选型</a></li>
+                        <li><a href="tutorial-mac.html">Mac 苹果电脑配置</a></li>
+                        <li><a href="tutorial-sing-box.html">sing-box 极速上手</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo"><span class="logo-icon">⚡</span><span class="logo-text">闪电机场评测</span></a>
+                <p>© 2026 闪电机场评测. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>导航快捷链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="rankings.html">机场排行榜</a></li>
+                    <li><a href="tutorials.html">客户端教程指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色专题</h4>
+                <ul>
+                    <li><a href="reviews.html">深度测评报告</a></li>
+                    <li><a href="speedtest.html">实时专线测速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="about.html">测评标准与声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
